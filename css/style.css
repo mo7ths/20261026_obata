@@ -1,0 +1,274 @@
+/*
+ * EDIX WORKS - single-page desktop portfolio
+ * Base design: 869 x 2048px.
+ * 1rem is 10px at the reference width, so the artwork scales proportionally
+ * to other desktop widths without introducing a separate mobile layout.
+ */
+:root {
+  font-size: 1.150747986vw;
+  --works-content-width: 68.2rem;
+  --red: #a22d2d;
+  --serif: Georgia, "Times New Roman", serif;
+  --jp-serif: "Noto Serif CJK JP", "Yu Mincho", "Hiragino Mincho ProN", serif;
+  --jp-sans: "Noto Sans JP", "Noto Sans CJK JP", "Hiragino Kaku Gothic ProN", sans-serif;
+}
+
+*, *::before, *::after { box-sizing: border-box; }
+html { scroll-behavior: smooth; }
+body { margin: 0; background: #fff; color: #080808; }
+a { color: inherit; text-decoration: none; }
+img { max-width: 100%; }
+
+.site-header {
+  position: relative;
+  z-index: 2;
+  width: 100%;
+  height: 7.4rem;
+  background: #000;
+  color: #fff;
+  display: flex;
+  align-items: center;
+  overflow: hidden;
+  font-family: var(--serif);
+}
+.site-logo {
+  position: absolute;
+  top: 2.865rem;
+  left: 2.865rem;
+  font-size: 1.67rem;
+  line-height: 1;
+  font-weight: 700;
+  white-space: nowrap;
+}
+.site-nav {
+  position: absolute;
+  right: 13.8rem;
+  top: 0;
+  height: 100%;
+  width: 14.4rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 0;
+  font-size: 1.0rem;
+  font-weight: 700;
+}
+.site-nav a, .site-logo { transition: opacity .18s ease; }
+.site-nav a:hover, .site-logo:hover { opacity: .72; }
+.contact-link {
+  position: absolute;
+  right: 1.2rem;
+  top: -1.1rem;
+  width: 9.6rem;
+  height: 9.6rem;
+  border-radius: 50%;
+  background: var(--red);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding-top: .1rem;
+  font-size: 1.66rem;
+  font-weight: 700;
+  transition: background-color .2s ease;
+}
+.contact-link:hover { background: #8d2121; }
+
+.hero {
+  position: relative;
+  width: 100%;
+  height: 48.6rem;
+  overflow: hidden;
+  background: url("../assets/hero-red.png") center top / cover no-repeat;
+  text-align: center;
+  color: #fff;
+}
+.hero-copy {
+  position: absolute;
+  z-index: 1;
+  top: 16.3rem;
+  left: 0;
+  width: 100%;
+  text-shadow: 0 .2rem .25rem rgba(0, 0, 0, .65);
+}
+.hero h1 {
+  margin: 0;
+  font: 400 4.2rem / 1.2 var(--serif);
+}
+.hero p {
+  width: var(--works-content-width);
+  margin: 1.0rem auto 0;
+  font: 700 1.45rem / 1.7 var(--jp-serif);
+  letter-spacing: 0;
+  text-align: justify;
+  text-align-last: justify;
+  white-space: nowrap;
+}
+/* White rising arc along the bottom of the main visual. */
+.hero::after {
+  content: "";
+  position: absolute;
+  top: 40rem;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 140rem;
+  height: 39rem;
+  border-radius: 50% 50% 0 0 / 100% 100% 0 0;
+  background: #fff;
+}
+
+.section { position: relative; width: 100%; }
+.section-heading {
+  position: absolute;
+  left: 0;
+  width: 100%;
+  text-align: center;
+}
+.section-heading h2 {
+  margin: 0;
+  font: 400 3.4rem / 1.2 var(--serif);
+}
+.section-heading p {
+  margin: -.2rem 0 0;
+  color: var(--red);
+  font: 500 .9rem / 1.35 var(--jp-sans);
+}
+
+.service { height: 33.7rem; background: #fff; }
+.service .section-heading { top: .8rem; }
+.services-grid {
+  position: absolute;
+  top: 9.9rem;
+  left: 50%;
+  transform: translateX(calc(-50% + .5rem));
+  width: 66rem;
+  display: grid;
+  grid-template-columns: repeat(3, 22rem);
+}
+.service-card { display: flex; flex-direction: column; align-items: center; }
+.service-icon {
+  width: 8.5rem;
+  height: 8.5rem;
+  border-radius: 50%;
+  background: var(--red);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.service-icon img { display: block; width: 3.6rem; height: 3.1rem; object-fit: contain; }
+.service-card:first-child .service-icon img { transform: translateX(.6rem) translateY(-.1rem); }
+.service-card:last-child .service-icon img { transform: translateY(.1rem); }
+.service-card h3 {
+  margin: 1.3rem 0 0;
+  font: 700 1.7rem / 1.35 var(--serif);
+  text-align: center;
+  white-space: nowrap;
+}
+.service-card p {
+  width: 18rem;
+  margin: .8rem 0 0;
+  font: 400 .8rem / 1.6 var(--jp-serif);
+  overflow-wrap: anywhere;
+}
+
+.works {
+  min-height: 90rem;
+  padding: 5rem 0 4.9rem;
+  background: #efefef;
+}
+.works .section-heading { position: static; }
+.works-grid {
+  width: var(--works-content-width);
+  margin: 4rem auto 0;
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  column-gap: 3.8rem;
+  row-gap: 5.4rem;
+}
+.work-card { min-width: 0; }
+.work-image {
+  position: relative;
+  width: 100%;
+  aspect-ratio: 1;
+  background: #a6a6a6;
+  clip-path: polygon(0 0,100% 0,100% 80%,80% 100%,0 100%);
+}
+.work-image img {
+  display: block;
+  position: absolute;
+  top: .1rem;
+  left: .1rem;
+  width: calc(100% - .2rem);
+  height: calc(100% - .2rem);
+  object-fit: cover;
+  clip-path: polygon(0 0,100% 0,100% 80%,80% 100%,0 100%);
+}
+.work-card h3 {
+  margin: 1.25rem 0 0;
+  font: 700 1.2rem / 1.6 var(--jp-serif);
+  white-space: nowrap;
+}
+.work-card p {
+  margin: 1.35rem 0 0;
+  font: 400 .9rem / 1.5 var(--jp-sans);
+}
+.view-more {
+  width: 12rem;
+  height: 3rem;
+  margin: 5.6rem auto 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: var(--red);
+  color: #fff;
+  border-radius: .3rem;
+  font: 400 1.15rem / 1 var(--serif);
+}
+
+.about { height: 36.1rem; background: #fff; }
+.about .section-heading { top: 7.2rem; }
+.about-content {
+  position: absolute;
+  top: 16.6rem;
+  left: 50%;
+  transform: translateX(calc(-50% + .6rem));
+  width: 46.2rem;
+  display: flex;
+  align-items: flex-start;
+  gap: 3.7rem;
+}
+.about-photo {
+  width: 12.2rem;
+  height: 12.2rem;
+  border-radius: 50%;
+  object-fit: cover;
+  object-position: left center;
+  flex: none;
+}
+.about-text { flex: 1; min-width: 0; }
+.about-text h3 {
+  margin: .1rem 0 0;
+  font: 400 2.1rem / 1.2 var(--serif);
+}
+.about-text p {
+  margin: .9rem 0 0;
+  font: 400 1.0rem / 1.4 var(--jp-serif);
+  letter-spacing: 0;
+}
+
+.site-footer {
+  height: 1.2rem;
+  background: var(--red);
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  padding-right: 3.9rem;
+  color: #fff;
+}
+.site-footer small { font: 400 .75rem / 1 var(--serif); }
+
+/* Accessibility for keyboard navigation, without changing the resting design. */
+a:focus-visible { outline: .2rem solid #fff; outline-offset: .3rem; }
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+  *, *::before, *::after { transition-duration: .01ms !important; }
+}
