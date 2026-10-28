@@ -97,7 +97,7 @@ img { max-width: 100%; }
 .hero p {
   width: var(--works-content-width);
   margin: 1.0rem auto 0;
-  font: 700 1.45rem / 1.7 var(--jp-serif);
+  font: 400 1.45rem / 1.7 var(--jp-serif);
   letter-spacing: 0;
   text-align: justify;
   text-align-last: justify;
@@ -159,7 +159,7 @@ img { max-width: 100%; }
 .service-card:last-child .service-icon img { transform: translateY(.1rem); }
 .service-card h3 {
   margin: 1.3rem 0 0;
-  font: 700 1.7rem / 1.35 var(--serif);
+  font: 400 1.7rem / 1.35 var(--serif);
   text-align: center;
   white-space: nowrap;
 }
