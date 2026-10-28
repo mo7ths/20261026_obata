@@ -233,7 +233,7 @@ img { max-width: 100%; }
   transform: translateX(calc(-50% + .6rem));
   width: 46.2rem;
   display: flex;
-  align-items: flex-start;
+  align-items: center;
   gap: 3.7rem;
 }
 .about-photo {
@@ -244,7 +244,11 @@ img { max-width: 100%; }
   object-position: left center;
   flex: none;
 }
-.about-text { flex: 1; min-width: 0; }
+.about-text {
+  flex: 1;
+  min-width: 0;
+  transform: translateY(-.6rem);
+}
 .about-text h3 {
   margin: .1rem 0 0;
   font: 400 2.1rem / 1.2 var(--serif);
