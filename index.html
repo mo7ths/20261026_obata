@@ -9,6 +9,8 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="./css/style.css">
+  <script src="./js/scroll-reveal.js" defer></script>
+  <script src="./js/works-carousel.js" defer></script>
 </head>
 <body>
   <header class="site-header" id="top">
@@ -25,8 +27,8 @@
   <main>
     <section class="hero" aria-labelledby="hero-title">
       <div class="hero-copy">
-        <h1 id="hero-title"><span class="hero-name">小畑 光央</span><span class="hero-role"> / デザイナー</span></h1>
-        <p>最新のAIスキルとプログラミング知識で、変化に強い最適なデザインを提案します。</p>
+        <h1 id="hero-title"><span class="hero-name">Mitsuo Obata</span><span class="hero-role"> / デザイナー</span></h1>
+        <p>AIの活用スキルとプログラミングの知識を活かし、変化に柔軟に対応するデザインを提案します。</p>
       </div>
     </section>
 
@@ -40,17 +42,17 @@
         <article class="service-card">
           <div class="service-icon"><img src="./assets/icon2.png" alt="" aria-hidden="true"></div>
           <h3>Graphic Design</h3>
-          <p>テキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキスト</p>
+          <p>広告、ポスター、パンフレット、パッケージの企画・デザイン制作を担当。目的やターゲットに合わせたビジュアル設計から入稿まで行います。</p>
         </article>
         <article class="service-card">
           <div class="service-icon"><img src="./assets/icon1.png" alt="" aria-hidden="true"></div>
           <h3>Web Design</h3>
-          <p>テキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキスト</p>
+          <p>Webサイトの企画・構成、情報設計、UIデザイン、画像制作を担当。目的とユーザー視点を踏まえ、使いやすく魅力的なサイトを制作します。</p>
         </article>
         <article class="service-card">
           <div class="service-icon"><img src="./assets/icon3.png" alt="" aria-hidden="true"></div>
           <h3>Direction</h3>
-          <p>テキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキスト</p>
+          <p>グラフィック・Web制作の企画、デザイン方針策定、制作指示、進行・品質管理を担当。関係者と連携し、目的に沿った制作物を実現します。</p>
         </article>
       </div>
     </section>
@@ -69,31 +71,32 @@
           <p>Figmaでデザインを設計し、AIを活用して、HTML/CSSで実装した個人サイトです。</p>
         </article>
         <article class="work-card">
-          <div class="work-image"><img src="./assets/work1.jpg" alt="オレンジと水色のスマートフォンUIデザイン" loading="lazy"></div>
-          <h3>プロジェクト名が入ります</h3>
-          <p>UIデザイン</p>
+          <div class="work-image"><img src="./assets/work2.jpg" alt="PCとモバイルのWebサイトデザイン" loading="lazy"></div>
+          <h3>LPサイト制作</h3>
+          <p>Webデザイン</p>
         </article>
         <article class="work-card">
           <div class="work-image"><img src="./assets/work4.jpg" alt="パープルとホワイトのスマートフォンデザイン" loading="lazy"></div>
-          <h3>プロジェクト名が入ります</h3>
+          <h3>メールマガジン制作</h3>
+          <p>Webデザイン</p>
+        </article>
+        <article class="work-card">
+          <div class="work-image"><img src="./assets/Graphic1.jpg" alt="パンフレットのデザイン" loading="lazy"></div>
+          <h3>パンフレット制作</h3>
           <p>グラフィックデザイン</p>
         </article>
         <article class="work-card">
-          <div class="work-image"><img src="./assets/work3.jpg" alt="オレンジ色のスマートフォンデザイン" loading="lazy"></div>
-          <h3>プロジェクト名が入ります</h3>
+          <div class="work-image"><img src="./assets/Graphic2.jpg" alt="チラシのデザイン" loading="lazy"></div>
+          <h3>チラシ制作</h3>
           <p>グラフィックデザイン</p>
         </article>
         <article class="work-card">
-          <div class="work-image"><img src="./assets/work5.jpg" alt="海の写真を使ったスマートフォンのWebデザイン" loading="lazy"></div>
-          <h3>プロジェクト名が入ります</h3>
-          <p>ウェブデザイン</p>
-        </article>
-        <article class="work-card">
-          <div class="work-image"><img src="./assets/work2.jpg" alt="PCとモバイルのWebサイトデザイン" loading="lazy"></div>
-          <h3>プロジェクト名が入ります</h3>
-          <p>ウェブデザイン</p>
+          <div class="work-image"><img src="./assets/Graphic3.jpg" alt="ポスターのデザイン" loading="lazy"></div>
+          <h3>ポスター制作</h3>
+          <p>グラフィックデザイン</p>
         </article>
       </div>
+      <div class="works-dots" role="group" aria-label="制作実績の表示位置" hidden></div>
       <!-- 遷移先の制作実績一覧ページが未指定のため、現段階では装飾のみ配置しています。 -->
       <span class="view-more">View More</span>
     </section>
@@ -105,7 +108,7 @@
       </div>
 
       <div class="about-content">
-        <img class="about-photo" src="./assets/about.jpg" alt="デザイナーのプロフィール写真" loading="lazy">
+        <img class="about-photo" src="./assets/Illisut_MitsuoObata.png" alt="デザイナーのプロフィール写真" loading="lazy">
         <div class="about-text">
           <h3>Mitsuo Obata</h3>
           <p>WebデザインとAIコーディングを学習中の小畑 光央です。</p>
