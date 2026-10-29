@@ -94,6 +94,13 @@ img { max-width: 100%; }
   margin: 0;
   font: 400 4.2rem / 1.2 var(--serif);
 }
+.hero-name {
+  letter-spacing: .12em;
+}
+.hero-role {
+  font-size: 2.4rem;
+  font-weight: 300;
+}
 .hero p {
   width: var(--works-content-width);
   margin: 1.0rem auto 0;
